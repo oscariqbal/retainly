@@ -2,20 +2,20 @@
 
 import { Loader2 } from 'lucide-react';
 import clsx from 'clsx';
-import React from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 type ButtonProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   loading?: boolean;
   className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
   children,
   loading = false,
   className,
   ...props
-}) => {
+}: ButtonProps) {
   return (
     <button
       className={clsx(
@@ -30,6 +30,4 @@ const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
-
-export default Button;
+}

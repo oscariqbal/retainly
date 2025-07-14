@@ -4,6 +4,8 @@ import { Inter, Manrope } from "next/font/google";
 
 import Button from '@/components/button';
 import Card from '@/components/card';
+import Header from '@/src/app/header';
+/*import Footer from '@/src/app/footer';*/
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${manrope.variable} antialiased text-xs sm:text-xs md:text-sm lg:text-base leading-relaxed`}>
+        <Header />
         {children}
 
         <div className="space-y-4 p-6">
@@ -41,7 +44,7 @@ export default function RootLayout({
             <Button className="bg-[var(--foreground)] text-[var(--utility)]">Default</Button>
           </Card>
         </div>
-        
+
       </body>
     </html>
   );
