@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Manrope } from "next/font/google";
 
-import Button from '@/components/button';
-import Card from '@/components/card';
 import Header from '@/src/app/header';
-/*import Footer from '@/src/app/footer';*/
+import Footer from '@/src/app/footer';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,22 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} antialiased text-xs sm:text-xs md:text-sm lg:text-base leading-relaxed`}>
+      <body className={`${inter.variable} ${manrope.variable} antialiased text-xs md:text-sm lg:text-base leading-relaxed`}>
         <Header />
         {children}
-
-        <div className="space-y-4 p-6">
-          <Button loading>Loading...</Button>
-
-          <Card
-            title="Card dengan tombol"
-            description="Contoh card dengan elemen tambahan."
-            className="bg-[var(--utility-translucent)]"
-          >
-            <Button className="bg-[var(--foreground)] text-[var(--utility)]">Default</Button>
-          </Card>
-        </div>
-
+        <Footer />
       </body>
     </html>
   );

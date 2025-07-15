@@ -8,10 +8,9 @@ export default function Header() {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <header className="h-[20vh] bg-linear-to-b from-[var(--utility)] to-[var(--background)]">
-            <div className="flex flex-row justify-between h-[40%] w-[85%] mx-auto ">
-
-                <Link href="/" className="flex items-end mr-auto w-[20%]">
+        <header className="h-[20vh] bg-linear-to-b from-[var(--utility)] to-[var(--background)] ">
+            <div className="flex flex-row justify-between h-[40%] w-[90%] md:w-[85%] mx-auto ">
+                <div className="flex items-end mr-auto w-[20%]">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 759.42 123.72" className="hidden md:block h-auto max-h-[50%] fill-current">
                         <path d="M74.21,2.14H3.45V13H45.32V72.9A42,42,0,0,1,3.45,115v10.91A52.94,52.94,0,0,0,50.83,96.12a52.94,52.94,0,0,0,47.38,29.74V115a42,42,0,0,1-41.87-42V13H74.21a42,42,0,0,1,42.05,41.87h10.91A53,53,0,0,0,74.21,2.14Z" transform="translate(-3.45 -2.14)"/>
                         <g>
@@ -28,9 +27,7 @@ export default function Header() {
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123.72 123.72" className="block md:hidden h-auto max-h-[50%] fill-current">
                         <path d="M72.9,2.14H2.14V13H44V72.9A42,42,0,0,1,2.14,115v10.91A53,53,0,0,0,49.52,96.12a52.94,52.94,0,0,0,47.37,29.74V115A42,42,0,0,1,55,72.9V13H72.9A42,42,0,0,1,115,54.87h10.91A53,53,0,0,0,72.9,2.14Z" transform="translate(-2.14 -2.14)"/>
                     </svg>
-
-                </Link>
-                
+                </div>
                 <nav className="relative w-[25%]">
                     <button className="text-3xl flex md:hidden h-[100%] items-end ml-auto hover:cursor-pointer" onClick={toggleMenu}>
                         &#9776;
