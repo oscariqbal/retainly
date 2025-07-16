@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import Link from '@/components/link';
+import ButtonLink from '@/components/buttonlink';
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,25 +34,25 @@ export default function Header() {
                     </button>
                     <ul className="hidden md:flex h-[100%] items-end justify-between ">
                         <li>
-                            <Link href="/">Home</Link>
+                            <ButtonLink href="/">Home</ButtonLink>
                         </li>
                         <li>
-                            <Link href="/predict">Predict</Link>
+                            <ButtonLink href="/predict">Predict</ButtonLink>
                         </li>
                         <li>
-                            <Link href="/about">About</Link>
+                            <ButtonLink href="/about">About</ButtonLink>
                         </li>
                     </ul>
                     {isOpen && (
                         <ul className="absolute top-full left-0 bg-[var(--utility)] shadow-lg rounded-lg mt-2 w-full z-50 md:hidden border border-[var(--foreground)]">
                             <li>
-                                <Link href="/"><div className="p-2 sm:p-3 w-full">Home</div></Link>
+                                <ButtonLink href="/"><div className="p-2 sm:p-3 w-full">Home</div></ButtonLink>
                             </li>
                             <li className="border-t border-[var(--foreground)]">
-                                <Link href="/predict"><div className="p-2 sm:p-3 w-full">Predict</div></Link>
+                                <ButtonLink href="/predict"><div className="p-2 sm:p-3 w-full">Predict</div></ButtonLink>
                             </li>
                             <li className="border-t border-[var(--foreground)]">
-                                <Link href="/about"><div className="p-2 sm:p-3 w-full">About</div></Link>
+                                <ButtonLink href="/about"><div className="p-2 sm:p-3 w-full">About</div></ButtonLink>
                             </li>
                         </ul>
                     )}

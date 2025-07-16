@@ -1,4 +1,4 @@
-import Link from '@/components/link';
+import ButtonLink from '@/components/buttonlink';
 export default function Footer(){
     return (
         <footer className="h-[25vh] py-1 sm:py-2 md:py-3 lg:py-4">
