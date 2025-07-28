@@ -322,7 +322,7 @@ export default function Predict(){
                       <Button
                         onClick={() => {
                           const link = document.createElement("a");
-                          link.href = `http://localhost:5000/download?file=${output_filename}`;
+                          link.href = `https://retainlybe-production.up.railway.app/download?file=${output_filename}`;
                           link.download = `${output_filename}`;
                           link.target = "_blank";
                           document.body.appendChild(link);
