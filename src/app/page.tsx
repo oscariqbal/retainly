@@ -10,7 +10,7 @@ export default function Home() {
           <FadeInOnScroll className="h-full w-full" delay={0.3}>
             <div className="md:mt-[10%]">
               <h1 className="mb-8">
-                Know Your Customer's<br />Churn Status
+                Know Your Customer&rsquo;s<br />Churn Status
               </h1>
               <p className="my-5 font-bold">
                 Know your customers before they leave.

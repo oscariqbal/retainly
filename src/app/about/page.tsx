@@ -9,6 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Target, BarChart as BarChartIcon, Brain, BookOpen, LayoutDashboard } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BarChart as ReBarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList} from "recharts";
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function About() {
     type Response = {
@@ -77,7 +78,7 @@ export default function About() {
                         <p className="text-justify mt-1 sm:mt-1.5 md:mt-2 lg:mt-2.5">
                             Retaining customers is harder than ever. 
                             While many businesses focus on getting new users, we believe the real growth happens when you understand why people stay or leave. 
-                            That's why we built Retainly <span className="font-semibold">"to help teams stop guessing and start acting on real insights"</span>.
+                            That&rsquo;s why we built Retainly <span className="font-semibold">&quot;to help teams stop guessing and start acting on real insights&quot;</span>.
                             <br />
                             By combining machine learning with smart design, Retainly turns your user data into clear, actionable predictions. You can now focus on what matters most, building lasting relationships.
                         </p>
@@ -205,6 +206,22 @@ export default function About() {
                             ))}
                         </div>
                     )}
+                    {loading && (
+                        <div className="w-full grid grid-cols-2 gap-4 text-xs md:text-sm text-muted-foreground">
+                            <div>
+                                <Skeleton className="h-full w-full bg-[var(--foreground-translucent)]"/>
+                                <Skeleton className="h-full w-full bg-[var(--foreground-translucent)]"/>
+                            </div>
+                        </div>
+                    )}
+                    {error && (
+                        <div className="w-full gap-4 text-xs md:text-sm text-muted-foreground">
+                            <div>
+                                <p className="font-medium truncate text-red-300">Error</p>
+                                <p className="truncate text-red-300">{error}</p>
+                            </div>
+                        </div>
+                    )}
                 </Card>
             </FadeInOnScroll>
             <div className="mb-[2vh] md:mb-[5vh]">
@@ -243,14 +260,14 @@ export default function About() {
                                         <AccordionContent className="text-[10px] md:text-xs lg:text-sm">
                                         <p><strong>Data type:</strong> Ordinal Categorical</p>
                                         <p>Categories: 1 Month, 3 Months, 12 Months.</p>
-                                        <p>The contract duration reflects the customer's level of commitment to the service.</p>
+                                        <p>The contract duration reflects the customer&rsquo;s level of commitment to the service.</p>
                                         </AccordionContent>
                                     </AccordionItem>
                                     <AccordionItem value="age">
                                         <AccordionTrigger className="text-[10px] md:text-xs lg:text-sm">Age</AccordionTrigger>
                                         <AccordionContent className="text-[10px] md:text-xs lg:text-sm">
                                         <p><strong>Data type:</strong> Numeric</p>
-                                        <p>The customer's current age. May reflect user experience or affinity for technology.</p>
+                                        <p>The customer&rsquo;s current age. May reflect user experience or affinity for technology.</p>
                                         </AccordionContent>
                                     </AccordionItem>
                                     <AccordionItem value="payment-delay">
@@ -297,6 +314,21 @@ export default function About() {
                                         </Bar>
                                     </ReBarChart>
                                 </ResponsiveContainer>
+                            )}
+                            {loading && (
+                                <div className="h-full w-full p-2">
+                                    <div>
+                                        <Skeleton className="h-full w-full bg-[var(--foreground-translucent)]"/>
+                                    </div>
+                                </div>
+                            )}
+                            {error && (
+                                <div className="w-full gap-4 text-xs md:text-sm text-muted-foreground">
+                                    <div>
+                                        <p className="font-medium truncate text-red-300">Error</p>
+                                        <p className="truncate text-red-300">{error}</p>
+                                    </div>
+                                </div>
                             )}
                             </Card>
                         </FadeInOnScroll>
