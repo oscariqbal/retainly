@@ -53,7 +53,7 @@ export default function FileUploadForm({
       setErrorMsg('');
       setFile(selected);
     }
-  }, []);
+  }, [validateFile]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
