@@ -85,7 +85,8 @@ export default function Predict(){
           setLoading(false);
         }, delay);
       }
-    } catch {
+    } catch (err) {
+      console.error(err);
       setError("Something went wrong. Please try again.");
       setResult(null);
       setLoading(false);
