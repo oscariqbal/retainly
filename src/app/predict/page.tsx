@@ -65,7 +65,7 @@ export default function Predict(){
     const start = Date.now();
 
     try {
-      const response = await fetch("http://localhost:5000/predict", {
+      const response = await fetch("https://retainlybe-production.up.railway.app/predict", {
         method: "POST",
         body: formData,
       });

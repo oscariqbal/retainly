@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Target, BarChart as BarChartIcon, Brain, BookOpen, LayoutDashboard } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BarChart as ReBarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList} from "recharts";
+import { BarChart as ReBarChart, Bar, XAxis, YAxis, ResponsiveContainer, LabelList} from "recharts";
 
 export default function About() {
     type Response = {
@@ -42,7 +42,7 @@ export default function About() {
         const fetchAbout = async () => {
             setLoading(true);
             try {
-                const response = await fetch("http://localhost:5000/about");
+                const response = await fetch("https://retainlybe-production.up.railway.app/about");
                 if (!response.ok) {
                     const errorJson = await response.json();
                     setError(errorJson.error);
