@@ -86,8 +86,8 @@ export default function Predict(){
         }, delay);
       }
     } catch (err) {
-      console.error(err);
-      setError("Something went wrong. Please try again.");
+      console.log(err);
+      setError("Something went wrong. Please try againn.");
       setResult(null);
       setLoading(false);
     }
